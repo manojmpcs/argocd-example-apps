@@ -1,0 +1,14 @@
+name: ArgoCD Healthy Trigger
+
+on:
+  repository_dispatch:
+    types: [argocd-test]
+
+jobs:
+  post-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "App: ${{ github.event.client_payload.app }}"
+          echo "Sync: ${{ github.event.client_payload.sync }}"
+          echo "🚀 Running post-deployment pipeline"
