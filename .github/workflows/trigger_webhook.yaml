@@ -9,6 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "App: ${{ github.event.client_payload.app }}"
+          echo "App Name: ${{ github.event.client_payload.app }}"
           echo "Sync: ${{ github.event.client_payload.sync }}"
           echo "🚀 Running post-deployment pipeline"
